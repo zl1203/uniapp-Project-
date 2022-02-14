@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "com-a": "/components/new_file",
+    "com-b": "/pages/index/B"
+  }
+}
