@@ -11,17 +11,23 @@ import heImage from "./components/he-image.vue";	//封装style合并统一图片
 import http from './common/http/axios.js'
 import * as filters from 'common/filters/filters.js'
 
+
 //引入组件库
-import uView from "uview-ui";
-Vue.use(uView);
+// import uView from "uview-ui";
+// Vue.use(uView);
+import uView from '@/uni_modules/uview-ui'
+Vue.use(uView)
+// 引入store
+import store from '@/store';
+Vue.prototype.$store = store
+// 引入uView提供的对vuex的简写法文件
+// let vuexStore = require('@/store/$u.mixin.js');
+// Vue.mixin(vuexStore);
 
 // 全局组件
 import qyLoading from 'components/global/qy-loading.vue'
 Vue.component('qy-loading',qyLoading);
 
-// uView-vuex
-let vuexStore = require('./common/store/$u.mixin.js')
-Vue.mixin(vuexStore)
 
 //全局过滤器
 console.log("filter",filters)
@@ -45,6 +51,7 @@ Vue.prototype.$mHelper = $mHelper;
 App.mpType = 'app'
 
 const app = new Vue({
+	store,
     ...App
 })
 app.$mount()

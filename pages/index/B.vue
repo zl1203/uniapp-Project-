@@ -1,6 +1,8 @@
 <template>
 	<view>
 		文字：{{text}}
+		<u-button @click="back" text="跳转返回"></u-button>
+		
 	</view>
 </template>
 
@@ -8,7 +10,8 @@
 	export default{
 		data(){
 			return {
-				text:''
+				text:'',
+				show:false,
 			}
 		},
 		onLoad(e){
@@ -26,6 +29,12 @@
 			//全局mixin便于下拉刷新与分享
 			show_data(){
 				
+			},
+			back(){
+				console.log('back')
+				uni.navigateBack({
+					delta:1
+				})
 			},
 			mes(data){
 				console.log("lsd",data)

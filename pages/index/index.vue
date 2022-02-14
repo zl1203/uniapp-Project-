@@ -1,26 +1,15 @@
 <template>
 	<view class="content">
 		<image class="logo" src="/static/logo.png"></image>
-		<view class="text-area">
-			<text class="title">{{title}}</text>
-		</view>
-		<comA></comA>
-		<comB></comB>
-		<view>全局过滤器：{{30.21|new_price}}</view>
 		<navigator url="/pages/index/B">
 			跳转
 		</navigator>
-		<u-button type="primary">zhou</u-button>
-		地址：{{this.$mConfig.hostUrl}}
 	</view>
 </template>
 
 <script>
-	import comA from "@/components/new_file.vue"
-	import comB from "./B.vue"
 	export default {
 		components:{
-			comA,comB
 		},
 		data() {
 			return {
